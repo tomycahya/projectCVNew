@@ -13,7 +13,6 @@
         id="page"
         title="{i18n>title}"
         showHeader="false"
-        
     >
         <content>
             <f:DynamicPage
@@ -27,22 +26,41 @@
                         pinnable="true"
                     >
                         <ObjectHeader
+                            icon="../image/Foto.jpg"
+                            iconDensityAware="false"
+                            iconAlt="Denise Smith"
+                            imageShape="Circle"
+                            responsive="true"
                             title="{cvModel>/name}"
                             id="object"
-                            number="{cvModel>/address}"
+                            intro="{cvModel>/interests}"
+		                    class="sapUiResponsivePadding--header"
                         >
+                            <statuses>
+                            <!-- <ObjectStatus id="_IDGenObjectStatus" title="Github" text="{cvModel>/github}" state="Success"></ObjectStatus> -->
+                            </statuses>
                             <attributes>
                                 <ObjectAttribute
                                     id="oattr"
                                     title="Email"
                                     text="{cvModel>/email}"
+                                    active="true"
                                 />
                                 <ObjectAttribute
                                     id="oattr2"
                                     title="Phone"
                                     text="{cvModel>/phone}"
                                 />
-                                
+                                <ObjectAttribute
+                                    id="oattr3"
+                                    title="Address"
+                                    text="{cvModel>/address}"
+                                />
+                                <!-- <ObjectAttribute
+                                    id="oattr4"
+                                    title="Github"
+                                    text="{cvModel>/github}"
+                                /> -->
                             </attributes>
                         </ObjectHeader>
                     </f:DynamicPageHeader>
@@ -59,9 +77,9 @@
                             id="ProductTypeStep"
                             title="Summary"
                             validated="true"
-                            
                         >
-                            <MessageStrip id="_IDGenMessageStrip"
+                            <MessageStrip
+                                id="_IDGenMessageStrip"
                                 class="sapUiSmallMarginBottom"
                                 text="The Wizard control is supposed to break down large tasks, into smaller steps, easier for the user to work with."
                                 showIcon="true"
@@ -83,10 +101,18 @@
                                 text="Validation in the wizard is controlled by calling the validateStep(Step) and invalidateStep(Step) methods "
                                 showIcon="true"
                             /> -->
-                            <Text
-                                id="_IDGenText1"
-                                text="Cras tellus leo, volutpat vitae ullamcorper eu, posuere malesuada nisl. Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien et viverra imperdiet, orci erat porttitor nulla, eget commodo metus nibh nec ipsum. Aliquam lacinia euismod metus, sollicitudin pellentesque purus volutpat eget. Pellentesque egestas erat quis eros convallis mattis. Mauris hendrerit sapien a malesu corper eu, posuere malesuada nisl. Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	corper eu, posuere malesuada nisl. Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	"
-                            />
+                            <List id="_IDGenList" mode="None"
+									items="{cvModel}"
+									enableBusyIndicator="true"
+									delete="handleDelete"
+									headerText="Items">
+								<StandardListItem id="_IDGenStandardListItem"
+										title="{experience>/jobTitle}"
+										type="Active"
+										
+										iconDensityAware="false"
+										iconInset="false" />
+							</List>
                         </WizardStep>
                         <WizardStep
                             id="OptionalInfoStep"
