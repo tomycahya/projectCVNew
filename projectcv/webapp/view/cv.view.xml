@@ -34,10 +34,10 @@
                             title="{cvModel>/name}"
                             id="object"
                             intro="{cvModel>/interests}"
-		                    class="sapUiResponsivePadding--header"
+                            class="sapUiResponsivePadding--header"
                         >
                             <statuses>
-                            <!-- <ObjectStatus id="_IDGenObjectStatus" title="Github" text="{cvModel>/github}" state="Success"></ObjectStatus> -->
+                                <!-- <ObjectStatus id="_IDGenObjectStatus" title="Github" text="{cvModel>/github}" state="Success"></ObjectStatus> -->
                             </statuses>
                             <attributes>
                                 <ObjectAttribute
@@ -81,7 +81,7 @@
                             <MessageStrip
                                 id="_IDGenMessageStrip"
                                 class="sapUiSmallMarginBottom"
-                                text="The Wizard control is supposed to break down large tasks, into smaller steps, easier for the user to work with."
+                                text="Summary of my CV"
                                 showIcon="true"
                             />
                             <Text
@@ -96,23 +96,28 @@
                             title="Experience"
                             activate="additionalInfoValidation"
                         >
-                            <!-- <MessageStrip
+                            <MessageStrip
+                                id="_IDGenMessageStrip1"
                                 class="sapUiSmallMarginBottom"
-                                text="Validation in the wizard is controlled by calling the validateStep(Step) and invalidateStep(Step) methods "
+                                text="Details about my experience"
                                 showIcon="true"
-                            /> -->
-                            <List id="_IDGenList" mode="None"
-									items="{cvModel}"
-									enableBusyIndicator="true"
-									delete="handleDelete"
-									headerText="Items">
-								<StandardListItem id="_IDGenStandardListItem"
-										title="{experience>/jobTitle}"
-										type="Active"
-										
-										iconDensityAware="false"
-										iconInset="false" />
-							</List>
+                            />
+                            <List
+                                id="_IDGenList"
+                                mode="None"
+                                items="{cvModel>/experience}"
+                                enableBusyIndicator="true"
+                            >
+                                <StandardListItem
+                                    id="_IDGenStandardListItem"
+                                    title="{cvModel>jobTitle}"
+                                    info="{cvModel>company} ({cvModel>duration})"
+                                    infoState="Information"
+                                    description="{cvModel>responsibilities}"
+                                    type="Inactive"
+                                    wrapping="true"
+                                />
+                            </List>
                         </WizardStep>
                         <WizardStep
                             id="OptionalInfoStep"
@@ -120,10 +125,28 @@
                             activate="optionalStepActivation"
                             title="Education"
                         >
-                            <Text
-                                id="_IDGenText2"
-                                text="Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec ppellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	corper eu, posuere malesuada nisl. Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	"
+                            <MessageStrip
+                                id="_IDGenMessageStrip3"
+                                class="sapUiSmallMarginBottom"
+                                text="Details about my Education"
+                                showIcon="true"
                             />
+                            <List
+                                id="_IDGenList1"
+                                mode="None"
+                                items="{cvModel>/education}"
+                                enableBusyIndicator="true"
+                            >
+                                <StandardListItem
+                                    id="_IDGenStandardListItem2"
+                                    title="{cvModel>degree}"
+                                    info="{cvModel>year}"
+                                    infoState="Information"
+                                    description="{cvModel>institution}"
+                                    type="Inactive"
+                                    wrapping="true"
+                                />
+                            </List>
                         </WizardStep>
                         <WizardStep
                             id="PricingStep"
@@ -131,10 +154,28 @@
                             validated="true"
                             title="Certifications"
                         >
-                            <Text
-                                id="_IDGenText3"
-                                text="Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec ppellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	corper eu, posuere malesuada nisl. Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	"
+                            <MessageStrip
+                                id="_IDGenMessageStrip4"
+                                class="sapUiSmallMarginBottom"
+                                text="Details about my Certifications"
+                                showIcon="true"
                             />
+                            <List
+                                id="_IDGenList2"
+                                mode="None"
+                                items="{cvModel>/certificate}"
+                                enableBusyIndicator="true"
+                            >
+                                <StandardListItem
+                                    id="_IDGenStandardListItem4"
+                                    title="{cvModel>title}"
+                                    info="{cvModel>year}"
+                                    infoState="Information"
+                                    description="{cvModel>description}"
+                                    type="Inactive"
+                                    wrapping="true"
+                                />
+                            </List>
                         </WizardStep>
 
                         <WizardStep
@@ -144,10 +185,25 @@
                             validated="true"
                             title="Skills"
                         >
-                            <Text
-                                id="_IDGenText4"
-                                text="Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec ppellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	corper eu, posuere malesuada nisl. Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	"
+                            <MessageStrip
+                                id="_IDGenMessageStrip5"
+                                class="sapUiSmallMarginBottom"
+                                text="Details about my Skills"
+                                showIcon="true"
                             />
+                            <List
+                                id="_IDGenList3"
+                                mode="None"
+                                items="{cvModel>/skills}"
+                                enableBusyIndicator="true"
+                            >
+                                <StandardListItem
+                                    id="_IDGenStandardListItem5"
+                                    title="{cvModel>name}"
+                                    type="Inactive"
+                                    wrapping="true"
+                                />
+                            </List>
                         </WizardStep>
                     </Wizard>
                 </f:content>
