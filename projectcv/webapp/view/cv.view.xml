@@ -53,7 +53,7 @@
                                 />
                                 <ObjectAttribute
                                     id="oattr3"
-                                    title="Address"
+                                    title="Domicile"
                                     text="{cvModel>/address}"
                                 />
                                 <!-- <ObjectAttribute

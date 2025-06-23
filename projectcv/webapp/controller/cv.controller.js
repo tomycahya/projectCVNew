@@ -11,8 +11,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
             name: "Tomi Cahya Anugrah",
             email: "tomycahya2@gmail.com",
             interests: ["SAP ABAP Developer", "Web Developer"],
-            phone: "081212345678",
-            address: "Jalan Raya No. 123, Jakarta, Indonesia",
+            phone: "085648779594",
+            address: "East Java, Indonesia",
             github: "https://github.com/tomycahya",
             summary: "As an experienced SAP-ABAP developer, I bring a wealth of technical expertise and a proven track record of designing and implementing efficient solutions. I am committed to driving innovation and delivering highquality results, making me a valuable asset to your team.",
             education: 
